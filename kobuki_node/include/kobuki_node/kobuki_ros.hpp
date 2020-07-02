@@ -68,6 +68,7 @@
 #include <kobuki_msgs/PowerSystemEvent.h>
 #include <kobuki_msgs/RobotStateEvent.h>
 #include <kobuki_msgs/SensorState.h>
+#include <kobuki_msgs/SingleNote.h>
 #include <kobuki_msgs/Sound.h>
 #include <kobuki_msgs/VersionInfo.h>
 #include <kobuki_msgs/WheelDropEvent.h>
@@ -112,7 +113,7 @@ private:
 
   ros::Subscriber velocity_command_subscriber, digital_output_command_subscriber, external_power_command_subscriber;
   ros::Subscriber controller_info_command_subscriber;
-  ros::Subscriber led1_command_subscriber, led2_command_subscriber, sound_command_subscriber;
+  ros::Subscriber led1_command_subscriber, led2_command_subscriber, sound_command_subscriber, single_note_command_subscriber;
   ros::Subscriber motor_power_subscriber, reset_odometry_subscriber;
 
   void advertiseTopics(ros::NodeHandle& nh);
@@ -127,6 +128,7 @@ private:
   void subscribeDigitalOutputCommand(const kobuki_msgs::DigitalOutputConstPtr);
   void subscribeExternalPowerCommand(const kobuki_msgs::ExternalPowerConstPtr);
   void subscribeResetOdometry(const std_msgs::EmptyConstPtr);
+  void subscribeSingleNoteCommand(const kobuki_msgs::SingleNoteConstPtr);
   void subscribeSoundCommand(const kobuki_msgs::SoundConstPtr);
   void subscribeMotorPower(const kobuki_msgs::MotorPowerConstPtr msg);
   void subscribeControllerInfoCommand(const kobuki_msgs::ControllerInfoConstPtr msg);
