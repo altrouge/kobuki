@@ -340,7 +340,7 @@ void KobukiRos::subscribeTopics(ros::NodeHandle& nh)
   digital_output_command_subscriber =  nh.subscribe(std::string("commands/digital_output"), 10, &KobukiRos::subscribeDigitalOutputCommand, this);
   external_power_command_subscriber =  nh.subscribe(std::string("commands/external_power"), 10, &KobukiRos::subscribeExternalPowerCommand, this);
   sound_command_subscriber =  nh.subscribe(std::string("commands/sound"), 10, &KobukiRos::subscribeSoundCommand, this);
-  single_note_command_subscriber =  nh.subscribe(std::string("commands/single_note"), 100, &KobukiRos::subscribeSingleNoteCommand, this);
+  custom_sound_command_subscriber =  nh.subscribe(std::string("commands/custom_sound"), 100, &KobukiRos::subscribeCustomSoundCommand, this);
   reset_odometry_subscriber = nh.subscribe("commands/reset_odometry", 10, &KobukiRos::subscribeResetOdometry, this);
   motor_power_subscriber = nh.subscribe("commands/motor_power", 10, &KobukiRos::subscribeMotorPower, this);
   controller_info_command_subscriber =  nh.subscribe(std::string("commands/controller_info"), 10, &KobukiRos::subscribeControllerInfoCommand, this);

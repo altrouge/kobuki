@@ -149,7 +149,7 @@ void KobukiRos::subscribeExternalPowerCommand(const kobuki_msgs::ExternalPowerCo
   return;
 }
 
-void KobukiRos::subscribeSingleNoteCommand(const kobuki_msgs::SingleNoteConstPtr msg)
+void KobukiRos::subscribeCustomSoundCommand(const kobuki_msgs::CustomSoundConstPtr msg)
 {
     kobuki.playSound(msg->duration, msg->frequency);
 }
